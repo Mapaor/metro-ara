@@ -14,7 +14,7 @@ type Props = { stationCodes: number[] };
 function arrivalTime(timestamp: number, now: number) {
   if (!now) return "—";
   const seconds = Math.max(0, Math.floor((timestamp - now) / 1000));
-  if (seconds < 35) return "Entra";
+  if (seconds < 15) return "Entra";
   return `${String(Math.floor(seconds / 60)).padStart(2, "0")}:${String(seconds % 60).padStart(2, "0")}`;
 }
 
