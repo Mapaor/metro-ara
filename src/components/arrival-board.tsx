@@ -45,7 +45,7 @@ export default function ArrivalBoard({ stationCodes }: Props) {
   useEffect(() => {
     const controller = new AbortController();
     const initialLoad = window.setTimeout(() => void load(controller.signal), 0);
-    const refresh = window.setInterval(() => void load(), 30_000);
+    const refresh = window.setInterval(() => void load(), 10_000); // Cada 10s tornem a fer la API call
     return () => {
       controller.abort();
       window.clearTimeout(initialLoad);
