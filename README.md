@@ -2,6 +2,10 @@
 
 Una web ben senzilla per mirar el pas dels metros en temps real.
 
+Domini Vercel: https://metro-ara.vercel.app/
+
+Domini propi: https://metro.rodalies.top
+
 ## Endpoints utilitzats
 
 ### Pel transit en temps reala una estació concreta:
