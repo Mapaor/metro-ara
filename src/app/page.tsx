@@ -10,9 +10,8 @@ export default function Home() {
         <ul className="line-list">
           {lineCodes.map((line) => (
             <li key={line}>
-              <Link className="line-link" href={`/${line}`}>
+              <Link className="line-link" href={`/line/${line}`}>
                 <span className="line-code" style={{ "--line-color": lineColors[line] } as CSSProperties}>{line}</span>
-                <span className="arrow" aria-hidden="true">↗</span>
               </Link>
             </li>
           ))}

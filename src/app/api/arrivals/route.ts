@@ -3,10 +3,10 @@ import { NextResponse } from "next/server";
 const TMB_URL = "https://api.tmb.cat/v1/itransit/metro/estacions";
 
 export async function GET(request: Request) {
-  const station = new URL(request.url).searchParams.get("station");
+  const stations = new URL(request.url).searchParams.get("stations");
 
-  if (!station || !/^\d+$/.test(station)) {
-    return NextResponse.json({ error: "Codi d’estació invàlid." }, { status: 400 });
+  if (!stations || !/^\d+(,\d+){0,9}$/.test(stations)) {
+    return NextResponse.json({ error: "Codis d’estació invàlids." }, { status: 400 });
   }
 
   const appId = process.env.TMB_APP_ID;
@@ -20,7 +20,7 @@ export async function GET(request: Request) {
   }
 
   const url = new URL(TMB_URL);
-  url.searchParams.set("estacions", station);
+  url.searchParams.set("estacions", stations);
   url.searchParams.set("app_id", appId);
   url.searchParams.set("app_key", appKey);
 

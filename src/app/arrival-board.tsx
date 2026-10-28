@@ -9,7 +9,7 @@ type Journey = { desti_trajecte: string; propers_trens: Train[] };
 type Platform = { linies_trajectes: Journey[] };
 type ArrivalLine = { nom_linia: string; estacions: Platform[] };
 type ArrivalResponse = { timestamp: number; linies: ArrivalLine[] };
-type Props = { line: LineCode; stationCode: number };
+type Props = { stationCodes: number[] };
 
 function arrivalTime(timestamp: number, now: number) {
   if (!now) return "—";
@@ -18,7 +18,7 @@ function arrivalTime(timestamp: number, now: number) {
   return `${String(Math.floor(seconds / 60)).padStart(2, "0")}:${String(seconds % 60).padStart(2, "0")}`;
 }
 
-export default function ArrivalBoard({ line, stationCode }: Props) {
+export default function ArrivalBoard({ stationCodes }: Props) {
   const [data, setData] = useState<ArrivalResponse | null>(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
@@ -28,7 +28,8 @@ export default function ArrivalBoard({ line, stationCode }: Props) {
     setLoading(true);
     setError("");
     try {
-      const response = await fetch(`/api/arrivals?station=${stationCode}`, { cache: "no-store", signal });
+      const codes = stationCodes.join(",");
+      const response = await fetch(`/api/arrivals?stations=${encodeURIComponent(codes)}`, { cache: "no-store", signal });
       const body = await response.json();
       if (!response.ok) throw new Error(body.error ?? "No s’han pogut carregar les arribades.");
       setData(body as ArrivalResponse);
@@ -39,7 +40,7 @@ export default function ArrivalBoard({ line, stationCode }: Props) {
     } finally {
       if (!signal?.aborted) setLoading(false);
     }
-  }, [stationCode]);
+  }, [stationCodes]);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -73,7 +74,7 @@ export default function ArrivalBoard({ line, stationCode }: Props) {
         {journeys.map(({ line: arrivalLine, journey }, index) => (
           <article className="direction" key={`${arrivalLine}-${journey.desti_trajecte}-${index}`}>
             <div className="direction-title">
-              <span className="line-mark" style={{ "--line-color": lineColors[arrivalLine as LineCode] ?? lineColors[line] } as CSSProperties}>{arrivalLine}</span>
+              <span className="line-mark" style={{ "--line-color": lineColors[arrivalLine as LineCode] ?? "#555" } as CSSProperties}>{arrivalLine}</span>
               <span>{journey.desti_trajecte}</span>
             </div>
             <div className="trains">

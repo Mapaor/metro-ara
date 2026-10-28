@@ -4,6 +4,8 @@ export const lineCodes = ["L1", "L2", "L3", "L4", "L5", "L9S", "L9N", "L10S", "L
 
 export type LineCode = (typeof lineCodes)[number];
 export type Station = { nom: string; codi: number };
+export type StationLocation = { line: LineCode; code: number };
+export type NetworkStation = { name: string; slug: string; locations: StationLocation[] };
 
 export const lineColors: Record<LineCode, string> = {
   L1: "#cb2508",
@@ -18,21 +20,37 @@ export const lineColors: Record<LineCode, string> = {
   L11: "#9ed84c",
 };
 
-export const lineNames: Record<LineCode, string> = {
-  L1: "Hospital de Bellvitge — Fondo",
-  L2: "Paral·lel — Badalona Pompeu Fabra",
-  L3: "Zona Universitària — Trinitat Nova",
-  L4: "La Pau — Trinitat Nova",
-  L5: "Cornellà Centre — Vall d’Hebron",
-  L9S: "Aeroport T1 — Zona Universitària",
-  L9N: "La Sagrera — Can Zam",
-  L10S: "ZAL | Riu Vell — Collblanc",
-  L10N: "La Sagrera — Gorg",
-  L11: "Trinitat Nova — Can Cuiàs",
-};
-
 export const stationCodes = stationData as Record<LineCode, Station[]>;
 
 export function isLineCode(value: string): value is LineCode {
   return lineCodes.includes(value as LineCode);
 }
+
+function stationKey(name: string) {
+  return name.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("ca");
+}
+
+export function stationSlug(name: string) {
+  return stationKey(name)
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
+const groupedStations = new Map<string, NetworkStation>();
+
+for (const line of lineCodes) {
+  for (const station of stationCodes[line]) {
+    const key = stationKey(station.nom);
+    const entry = groupedStations.get(key) ?? {
+      name: station.nom,
+      slug: stationSlug(station.nom),
+      locations: [],
+    };
+    entry.locations.push({ line, code: station.codi });
+    groupedStations.set(key, entry);
+  }
+}
+
+export const networkStations = [...groupedStations.values()];
+
+

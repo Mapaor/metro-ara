@@ -60,7 +60,6 @@ button { font: inherit; }
   line-height: 1;
 }
 .line-code { width: 36px; height: 25px; }
-.arrow { margin-left: auto; color: #aaa; font-size: 15px; }
 
 .breadcrumb {
   margin: 0 0 28px;
@@ -68,48 +67,76 @@ button { font: inherit; }
   font-size: 12px;
 }
 .breadcrumb a:hover { color: var(--ink); }
-.line-page-title { display: flex; align-items: center; margin-bottom: 25px; }
+.line-page { width: min(100% - 40px, 980px); }
+.line-page-title { display: flex; align-items: center; margin-bottom: 0; }
 .line-page-title .line-code { width: 43px; height: 29px; font-size: 13px; }
-.station-list {
+.route-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 165px 38px 26px;
+  scrollbar-color: #bbb transparent;
+  scrollbar-width: thin;
+}
+.route-track {
+  display: flex;
   position: relative;
+  width: max-content;
   margin: 0;
   padding: 0;
   list-style: none;
 }
-.station-list::before {
+.route-stop {
+  position: relative;
+  flex: 0 0 136px;
+  height: 38px;
+}
+.route-stop::after {
   position: absolute;
-  top: 13px;
-  bottom: 13px;
-  left: 7px;
-  width: 3px;
-  border-radius: 2px;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  height: 7px;
+  border-radius: 99px;
   background: var(--line-color);
   content: "";
 }
-.station-link {
-  display: flex;
-  min-height: 40px;
-  align-items: center;
-  gap: 16px;
-  position: relative;
-  width: fit-content;
-  padding-right: 12px;
-  font-size: 13px;
+.route-stop:last-child { flex-basis: 0; }
+.route-stop:last-child::after { display: none; }
+.route-stop-link { position: absolute; top: 0; left: 0; display: block; width: 150px; height: 38px; }
+.route-station-name {
+  position: absolute;
+  bottom: 49px;
+  left: 0;
+  transform: rotate(-45deg);
+  transform-origin: left bottom;
+  color: #242424;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+  transition: color .15s ease;
 }
-.station-node {
+.route-node {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
   z-index: 1;
-  width: 17px;
-  height: 17px;
-  flex: 0 0 17px;
-  border: 3px solid var(--line-color);
+  width: 27px;
+  height: 27px;
+  place-items: center;
+  transform: translate(-50%, 0);
+  border: 5px solid var(--line-color);
   border-radius: 50%;
   background: var(--paper);
-  transition: transform .15s ease;
+  transition: transform .15s ease, background .15s ease;
 }
-.station-link:hover .station-node { transform: scale(1.2); }
-.station-link:hover > span:last-child { text-decoration: underline; text-underline-offset: 3px; }
-.station-page-title { margin-bottom: 34px; font-size: 30px; letter-spacing: -.8px; }
+.route-node span { width: 7px; height: 7px; border-radius: 50%; background: transparent; }
+.route-stop-link:hover .route-node { transform: translate(-50%, 0) scale(1.15); background: var(--line-color); }
+.route-stop-link:hover .route-node span { background: #fff; }
+.route-stop-link:hover .route-station-name { color: var(--line-color); }
 
+.station-page-title { margin-bottom: 34px; font-size: 30px; letter-spacing: -.8px; }
 .arrivals { position: relative; }
 .refresh {
   position: absolute;
@@ -136,10 +163,15 @@ button { font: inherit; }
 .train-code { color: var(--muted); font-size: 10px; }
 .train-next .train-code { color: #aaa; }
 .arrival-message { margin: 0; padding: 18px 0; border-top: 1px solid var(--rule); color: var(--muted); font-size: 12px; }
-.arrival-list:empty + .arrival-message { border-top: 1px solid var(--rule); }
 
 @media (max-width: 600px) {
   .page { width: calc(100% - 36px); margin-top: 38px; }
+  .line-page { width: calc(100% - 20px); }
+  .route-scroll { padding: 145px 24px 22px; }
+  .route-stop { flex-basis: 122px; }
+  .route-stop:last-child { flex-basis: 0; }
+  .route-stop-link { width: 138px; }
+  .route-station-name { font-size: 11px; }
   .station-page-title { font-size: 26px; }
 }
 
