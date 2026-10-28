@@ -27,7 +27,7 @@ export async function GET(request: Request) {
   try {
     const response = await fetch(url, {
       headers: { Accept: "application/json" },
-      next: { revalidate: 20 },
+      cache: "no-store",
     });
 
     if (!response.ok) {
@@ -37,7 +37,9 @@ export async function GET(request: Request) {
       );
     }
 
-    return NextResponse.json(await response.json());
+    return NextResponse.json(await response.json(), {
+      headers: { "Cache-Control": "no-store, max-age=0" },
+    });
   } catch {
     return NextResponse.json(
       { error: "No s’ha pogut connectar amb el servei de TMB." },

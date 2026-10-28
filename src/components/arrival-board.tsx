@@ -23,15 +23,21 @@ export default function ArrivalBoard({ stationCodes }: Props) {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
   const [now, setNow] = useState(0);
+  const [clockOffset, setClockOffset] = useState(0);
 
   const load = useCallback(async (signal?: AbortSignal) => {
     setLoading(true);
     setError("");
     try {
       const codes = stationCodes.join(",");
+      const requestStartedAt = Date.now();
       const response = await fetch(`/api/arrivals?stations=${encodeURIComponent(codes)}`, { cache: "no-store", signal });
       const body = await response.json();
+      const responseReceivedAt = Date.now();
       if (!response.ok) throw new Error(body.error ?? "No s’han pogut carregar les arribades.");
+      if (typeof body.timestamp === "number" && Number.isFinite(body.timestamp)) {
+        setClockOffset(body.timestamp - (requestStartedAt + responseReceivedAt) / 2);
+      }
       setData(body as ArrivalResponse);
     } catch (caught) {
       if (caught instanceof Error && caught.name === "AbortError") return;
@@ -82,7 +88,7 @@ export default function ArrivalBoard({ stationCodes }: Props) {
                 const train = journey.propers_trens?.[trainIndex];
                 return (
                   <div className={`train${trainIndex ? " train-next" : ""}`} key={train?.codi_servei ?? trainIndex}>
-                    <span className="train-time">{train ? arrivalTime(train.temps_arribada, now) : "—"}</span>
+                    <span className="train-time">{train ? arrivalTime(train.temps_arribada, now + clockOffset) : "—"}</span>
                     {train && <span className="train-code">Torn {train.codi_servei}</span>}
                   </div>
                 );
