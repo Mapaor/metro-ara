@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import ArrivalBoard from "../../arrival-board";
-import { isLineCode, networkStations } from "../../metro-lines";
+import ArrivalBoard from "../../../components/arrival-board";
+import { isLineCode, networkStations } from "../../../utils/metro-lines";
 
 type Props = {
   params: Promise<{ station: string }>;

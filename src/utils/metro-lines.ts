@@ -1,3 +1,6 @@
+// Ens guardem la informació (estàtica) que hem descarregat com a JSON i convertit
+// i guardat a la carpeta `public/`, com a arrays interns de JS
+
 import stationData from "../../public/codis-estacions.json";
 
 export const lineCodes = ["L1", "L2", "L3", "L4", "L5", "L9S", "L9N", "L10S", "L10N", "L11"] as const;
@@ -52,5 +55,3 @@ for (const line of lineCodes) {
 }
 
 export const networkStations = [...groupedStations.values()];
-
-

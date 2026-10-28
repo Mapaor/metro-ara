@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { CSSProperties } from "react";
-import { lineCodes, lineColors } from "./metro-lines";
+import { lineCodes, lineColors } from "../utils/metro-lines";
 
 export default function Home() {
   return (

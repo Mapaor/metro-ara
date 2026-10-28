@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { CSSProperties } from "react";
-import { isLineCode, lineCodes, lineColors, stationCodes, stationSlug } from "../../metro-lines";
+import { isLineCode, lineCodes, lineColors, stationCodes, stationSlug } from "../../../utils/metro-lines";
 
 type Props = { params: Promise<{ line: string }> };
 

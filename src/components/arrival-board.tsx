@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import type { CSSProperties } from "react";
-import { lineColors, type LineCode } from "./metro-lines";
+import { lineColors, type LineCode } from "../utils/metro-lines";
 
 type Train = { codi_servei: string; temps_arribada: number };
 type Journey = { desti_trajecte: string; propers_trens: Train[] };
