@@ -14,10 +14,12 @@ Domini propi: [metro.rodalies.top](https://metro.rodalies.top)
 https://api.tmb.cat/v1/itransit/metro/estacions?estacions=516&app_id=f03eaf7e&app_key=e4b38fbbd076a1b952e2d6db45f6b32f
 ```
 
-Per identificar l'estació s'utilitza el codi d'estació (que no és el mateix que el id de estació)
+*Nota: Els `app_id` i `app_key` són d'exemple, cal que et registris a [developer.tmb.cat](https://developer.tmb.cat/docs/getting-started) i creis una app per obtenir un id i key que puguis utilitzar.*
+
+Per identificar l'estació s'utilitza el codi d'estació (que no és el mateix que el id de estació).
 
 #### Exemple de resposta
-```
+```json
 {
   "timestamp": 1793190708960,
   "linies": [
@@ -84,7 +86,7 @@ Per identificar l'estació s'utilitza el codi d'estació (que no és el mateix q
 
 Els UNIX Timestamps de `temps_arribada` ens donen la informació que necessitem.
 
-### Per saber informació (estàtica) sobre les estacions:
+### Per saber informació sobre les estacions:
 
 ```
 https://api.tmb.cat/v1/transit/linies/metro/estacions?app_id=f03eaf7e&app_key=e4b38fbbd076a1b952e2d6db45f6b32f
@@ -93,7 +95,7 @@ https://api.tmb.cat/v1/transit/linies/metro/estacions?app_id=f03eaf7e&app_key=e4
 *Nota: també hi ha un endpoint similar que retorna el mateix tipus d'informació però més reduïda: `https://api.tmb.cat/v1/transit/estacions?app_id=f03eaf7e&app_key=e4b38fbbd076a1b952e2d6db45f6b32f`.*
 
 #### Exemple de resposta
-Serà un JSON amb moltes estacions, cada una d'elles mostrant la seva informació. Per exemple per Badal:
+Serà un JSON amb un array amb moltes estacions, cada una d'elles mostrant la seva informació. Per exemple per Badal:
 
 ```json
 {
@@ -139,14 +141,14 @@ Serà un JSON amb moltes estacions, cada una d'elles mostrant la seva informaci�
 
 ## Com obtenir els codis de les estacions
 
-A partir de la resposta completa de `https://api.tmb.cat/v1/transit/linies/metro/estacions?app_id=f03eaf7e&app_key=e4b38fbbd076a1b952e2d6db45f6b32f` ens guardem el JSON a dins de [`public/estacions-info.json`](public/estacions-info.json) i després executem un script python propi [`obtenir-codis-estacions.py`](/obtenir-codis-estacions.py), que genera la informació que trobem a [`public/codis-estacions.json`](public/codis-estacions.json).
+A partir de la resposta completa de `https://api.tmb.cat/v1/transit/linies/metro/estacions?app_id=f03eaf7e&app_key=e4b38fbbd076a1b952e2d6db45f6b32f` ens guardem el JSON com a fitxer a [`public/estacions-info.json`](public/estacions-info.json) i després executem un script python propi [`obtenir-codis-estacions.py`](/obtenir-codis-estacions.py), que genera la informació que trobem a [`public/codis-estacions.json`](public/codis-estacions.json).
 
-*Nota: alternativament haguéssim pogut fer tot via API calls utilitzant filtres per nom o codi d'estació tipus `https://api.tmb.cat/v1/transit/estacions?filter=NOM_ESTACIO%20like%20%27Badal%27&app_id=f03eaf7e&app_key=e4b38fbbd076a1b952e2d6db45f6b32f`. Però fer-ho estàticament (les parades de metro no solen canviar xd) és més ràpid.*
+*Nota: alternativament haguéssim pogut fer tot via API calls utilitzant filtres per nom o codi d'estació tipus `https://api.tmb.cat/v1/transit/estacions?filter=NOM_ESTACIO%20like%20%27Badal%27&app_id=f03eaf7e&app_key=e4b38fbbd076a1b952e2d6db45f6b32f`. Però fer-ho estàticament (les parades de metro no solen canviar gaire xd) és més ràpid.*
 
 
-## Disseny de UX
+## Disseny UX
 
-L'usuari se li mostren diverses línies amb els seus pictogrames fets via CSS (un quadrat de color solid i el nom de la línia com a text de color blanc)
+A l'usuari se li mostren les línies de metro (els logos de les quals estan fetes via CSS, un quadrat de color solid i el nom de la línia com a text blanc)
 
 L1 - #cb2508 (vermella)
 L2 - #90278e (lila)
@@ -159,12 +161,12 @@ L10S - #31a8e0 (blau clar)
 L10N - #31a8e0 (blau clar)
 L11 - #9ed84c (verd clar)
 
-*Nota: També hi ha les següents altres línies de metro L6 - #847dc6 (lila apagat), L7 - #ad6219 (marró), L8 - #e659b4 (rosa) i L12 - #bab7d7 (gris lilós), però aquestes no formen part de la API de TMB (no hi han dades), així que a `metro-ara` decidim ignorar-les.*
+*Nota: També hi ha les següents altres línies de metro: L6 - #847dc6 (lila apagat), L7 - #ad6219 (marró), L8 - #e659b4 (rosa) i L12 - #bab7d7 (gris lilós). Però aquestes no formen part de la API de TMB (no hi han dades disponibles), així que decidim ignorar-les.*
 
 ## Funcionament UX
-Quan l'usuari clica una línia entra en la seva pàgina i es mostren les seves estacions seguint una tira de color sòlid i amb nodes a cada estació amb el seu nom (igual que en les infografies del metro).
+Quan l'usuari clica una línia entra a la seva pàgina i es mostren les seves estacions seguint una tira de color sòlid i amb nodes a cada estació amb el seu nom inclinat (recreant les infografies del metro).
 
-Al clicar un node es va a la pàgina d'aquella estació, on es mostra per cada línia que té l'estació i en les dues direccions el metro que està arribant i el següent metro que arribarà després (amb menys opacitat), tal com a les pantalles de les andanes de metro.
+Al clicar un node es va a la pàgina d'aquella estació, on es mostra per cada línia en les dues direccions el metro que està arribant i el següent metro que arribarà després (amb menys opacitat), tal com a les pantalles de les andanes de metro.
 
 El disseny CSS que recrea les pantalles del metro està inspirat en la app Andana ([`andana.bcn.am`](https://andana.bcn.am/)), però fet més minimalista.
 
