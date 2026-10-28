@@ -689,3 +689,11 @@ I el de la tira per cada línia amb les parades també:
   </div>
 </div>
 ```
+
+## Seguretat
+Les API calls es fan des de la api interna que generem amb app/api de NextJS per tal de no exposar la TMB_APP_KEY i TMB_APP_ID que es guarden a un fitxer de variables d'entorn `.env.local`.
+
+Els exemples mostrats en aquest README són valors d'exemple (actualment encara en funcionament però que canviaré després de publicar aquest repositori).
+
+## Llicència
+MIT
