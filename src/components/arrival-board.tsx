@@ -11,9 +11,11 @@ type ArrivalLine = { nom_linia: string; estacions: Platform[] };
 type ArrivalResponse = { timestamp: number; linies: ArrivalLine[] };
 type Props = { stationCodes: number[] };
 
+const ARRIVAL_CORRECTION_MS = 10_000;
+
 function arrivalTime(timestamp: number, now: number) {
   if (!now) return "—";
-  const seconds = Math.max(0, Math.floor((timestamp - now) / 1000));
+  const seconds = Math.max(0, Math.floor((timestamp - now - ARRIVAL_CORRECTION_MS) / 1000));
   if (seconds < 15) return "Entra";
   return `${String(Math.floor(seconds / 60)).padStart(2, "0")}:${String(seconds % 60).padStart(2, "0")}`;
 }
