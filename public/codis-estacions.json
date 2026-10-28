@@ -1,0 +1,698 @@
+{
+  "L1": [
+    {
+      "nom": "Hospital de Bellvitge",
+      "codi": 111
+    },
+    {
+      "nom": "Bellvitge",
+      "codi": 112
+    },
+    {
+      "nom": "Av. Carrilet",
+      "codi": 113
+    },
+    {
+      "nom": "Rambla Just Oliveras",
+      "codi": 114
+    },
+    {
+      "nom": "Can Serra",
+      "codi": 115
+    },
+    {
+      "nom": "Florida",
+      "codi": 116
+    },
+    {
+      "nom": "Torrassa",
+      "codi": 117
+    },
+    {
+      "nom": "Santa Eulàlia",
+      "codi": 118
+    },
+    {
+      "nom": "Mercat Nou",
+      "codi": 119
+    },
+    {
+      "nom": "Plaça de Sants",
+      "codi": 120
+    },
+    {
+      "nom": "Hostafrancs",
+      "codi": 121
+    },
+    {
+      "nom": "Espanya",
+      "codi": 122
+    },
+    {
+      "nom": "Rocafort",
+      "codi": 123
+    },
+    {
+      "nom": "Urgell",
+      "codi": 124
+    },
+    {
+      "nom": "Universitat",
+      "codi": 125
+    },
+    {
+      "nom": "Catalunya",
+      "codi": 126
+    },
+    {
+      "nom": "Urquinaona",
+      "codi": 127
+    },
+    {
+      "nom": "Arc de Triomf",
+      "codi": 128
+    },
+    {
+      "nom": "Marina",
+      "codi": 129
+    },
+    {
+      "nom": "Glòries",
+      "codi": 130
+    },
+    {
+      "nom": "Clot",
+      "codi": 131
+    },
+    {
+      "nom": "Navas",
+      "codi": 132
+    },
+    {
+      "nom": "La Sagrera",
+      "codi": 133
+    },
+    {
+      "nom": "Fabra i Puig",
+      "codi": 134
+    },
+    {
+      "nom": "Sant Andreu",
+      "codi": 135
+    },
+    {
+      "nom": "Torras i Bages",
+      "codi": 136
+    },
+    {
+      "nom": "Trinitat Vella",
+      "codi": 137
+    },
+    {
+      "nom": "Baró de Viver",
+      "codi": 138
+    },
+    {
+      "nom": "Santa Coloma",
+      "codi": 139
+    },
+    {
+      "nom": "Fondo",
+      "codi": 140
+    }
+  ],
+  "L10N": [
+    {
+      "nom": "La Sagrera",
+      "codi": 10430
+    },
+    {
+      "nom": "Onze de Setembre",
+      "codi": 10432
+    },
+    {
+      "nom": "Bon Pastor",
+      "codi": 10433
+    },
+    {
+      "nom": "Llefià",
+      "codi": 10434
+    },
+    {
+      "nom": "La Salut",
+      "codi": 10435
+    },
+    {
+      "nom": "Gorg",
+      "codi": 10436
+    }
+  ],
+  "L10S": [
+    {
+      "nom": "ZAL | Riu Vell",
+      "codi": 1051
+    },
+    {
+      "nom": "Ecoparc",
+      "codi": 1052
+    },
+    {
+      "nom": "Port Comercial | La Factoria",
+      "codi": 1053
+    },
+    {
+      "nom": "Zona Franca",
+      "codi": 1054
+    },
+    {
+      "nom": "Foc",
+      "codi": 1056
+    },
+    {
+      "nom": "Foneria",
+      "codi": 1057
+    },
+    {
+      "nom": "Ciutat de la Justícia",
+      "codi": 1058
+    },
+    {
+      "nom": "Provençana",
+      "codi": 1059
+    },
+    {
+      "nom": "Can Tries | Gornal",
+      "codi": 1014
+    },
+    {
+      "nom": "Torrassa",
+      "codi": 1015
+    },
+    {
+      "nom": "Collblanc",
+      "codi": 1016
+    }
+  ],
+  "L11": [
+    {
+      "nom": "Trinitat Nova",
+      "codi": 1136
+    },
+    {
+      "nom": "Casa de l'Aigua",
+      "codi": 1137
+    },
+    {
+      "nom": "Torre Baró | Vallbona",
+      "codi": 1138
+    },
+    {
+      "nom": "Ciutat Meridiana",
+      "codi": 1139
+    },
+    {
+      "nom": "Can Cuiàs",
+      "codi": 1140
+    }
+  ],
+  "L2": [
+    {
+      "nom": "Paral·lel",
+      "codi": 210
+    },
+    {
+      "nom": "Sant Antoni",
+      "codi": 211
+    },
+    {
+      "nom": "Universitat",
+      "codi": 212
+    },
+    {
+      "nom": "Passeig de Gràcia",
+      "codi": 213
+    },
+    {
+      "nom": "Tetuan",
+      "codi": 214
+    },
+    {
+      "nom": "Monumental",
+      "codi": 215
+    },
+    {
+      "nom": "Sagrada Família",
+      "codi": 216
+    },
+    {
+      "nom": "Encants",
+      "codi": 217
+    },
+    {
+      "nom": "Clot",
+      "codi": 218
+    },
+    {
+      "nom": "Bac de Roda",
+      "codi": 219
+    },
+    {
+      "nom": "Sant Martí",
+      "codi": 220
+    },
+    {
+      "nom": "La Pau",
+      "codi": 221
+    },
+    {
+      "nom": "Verneda",
+      "codi": 222
+    },
+    {
+      "nom": "Artigues | Sant Adrià",
+      "codi": 223
+    },
+    {
+      "nom": "Sant Roc",
+      "codi": 224
+    },
+    {
+      "nom": "Gorg",
+      "codi": 225
+    },
+    {
+      "nom": "Pep Ventura",
+      "codi": 226
+    },
+    {
+      "nom": "Badalona Pompeu Fabra",
+      "codi": 227
+    }
+  ],
+  "L3": [
+    {
+      "nom": "Zona Universitària",
+      "codi": 314
+    },
+    {
+      "nom": "Palau Reial",
+      "codi": 315
+    },
+    {
+      "nom": "Maria Cristina",
+      "codi": 316
+    },
+    {
+      "nom": "Les Corts",
+      "codi": 317
+    },
+    {
+      "nom": "Plaça del Centre",
+      "codi": 318
+    },
+    {
+      "nom": "Sants Estació",
+      "codi": 319
+    },
+    {
+      "nom": "Tarragona",
+      "codi": 320
+    },
+    {
+      "nom": "Espanya",
+      "codi": 321
+    },
+    {
+      "nom": "Poble Sec",
+      "codi": 322
+    },
+    {
+      "nom": "Paral·lel",
+      "codi": 323
+    },
+    {
+      "nom": "Drassanes",
+      "codi": 324
+    },
+    {
+      "nom": "Liceu",
+      "codi": 325
+    },
+    {
+      "nom": "Catalunya",
+      "codi": 326
+    },
+    {
+      "nom": "Passeig de Gràcia",
+      "codi": 327
+    },
+    {
+      "nom": "Diagonal",
+      "codi": 328
+    },
+    {
+      "nom": "Fontana",
+      "codi": 329
+    },
+    {
+      "nom": "Lesseps",
+      "codi": 330
+    },
+    {
+      "nom": "Vallcarca",
+      "codi": 331
+    },
+    {
+      "nom": "Penitents",
+      "codi": 332
+    },
+    {
+      "nom": "Vall d'Hebron",
+      "codi": 333
+    },
+    {
+      "nom": "Montbau",
+      "codi": 334
+    },
+    {
+      "nom": "Mundet",
+      "codi": 335
+    },
+    {
+      "nom": "Valldaura",
+      "codi": 336
+    },
+    {
+      "nom": "Canyelles",
+      "codi": 337
+    },
+    {
+      "nom": "Roquetes",
+      "codi": 338
+    },
+    {
+      "nom": "Trinitat Nova",
+      "codi": 339
+    }
+  ],
+  "L4": [
+    {
+      "nom": "La Pau",
+      "codi": 413
+    },
+    {
+      "nom": "Besòs",
+      "codi": 414
+    },
+    {
+      "nom": "Besòs Mar",
+      "codi": 415
+    },
+    {
+      "nom": "El Maresme | Fòrum",
+      "codi": 416
+    },
+    {
+      "nom": "Selva de Mar",
+      "codi": 417
+    },
+    {
+      "nom": "Poblenou",
+      "codi": 418
+    },
+    {
+      "nom": "Llacuna",
+      "codi": 419
+    },
+    {
+      "nom": "Bogatell",
+      "codi": 420
+    },
+    {
+      "nom": "Ciutadella | Vila Olímpica",
+      "codi": 421
+    },
+    {
+      "nom": "Barceloneta",
+      "codi": 422
+    },
+    {
+      "nom": "Jaume I",
+      "codi": 423
+    },
+    {
+      "nom": "Urquinaona",
+      "codi": 424
+    },
+    {
+      "nom": "Passeig de Gràcia",
+      "codi": 425
+    },
+    {
+      "nom": "Girona",
+      "codi": 426
+    },
+    {
+      "nom": "Verdaguer",
+      "codi": 427
+    },
+    {
+      "nom": "Joanic",
+      "codi": 428
+    },
+    {
+      "nom": "Alfons X",
+      "codi": 429
+    },
+    {
+      "nom": "Guinardó | Hospital de Sant Pau",
+      "codi": 430
+    },
+    {
+      "nom": "Maragall",
+      "codi": 431
+    },
+    {
+      "nom": "Llucmajor",
+      "codi": 432
+    },
+    {
+      "nom": "Via Júlia",
+      "codi": 433
+    },
+    {
+      "nom": "Trinitat Nova",
+      "codi": 434
+    }
+  ],
+  "L5": [
+    {
+      "nom": "Cornellà Centre",
+      "codi": 509
+    },
+    {
+      "nom": "Gavarra",
+      "codi": 510
+    },
+    {
+      "nom": "Sant Ildefons",
+      "codi": 511
+    },
+    {
+      "nom": "Can Boixeres",
+      "codi": 512
+    },
+    {
+      "nom": "Can Vidalet",
+      "codi": 513
+    },
+    {
+      "nom": "Pubilla Cases",
+      "codi": 514
+    },
+    {
+      "nom": "Ernest Lluch",
+      "codi": 555
+    },
+    {
+      "nom": "Collblanc",
+      "codi": 515
+    },
+    {
+      "nom": "Badal",
+      "codi": 516
+    },
+    {
+      "nom": "Plaça de Sants",
+      "codi": 517
+    },
+    {
+      "nom": "Sants Estació",
+      "codi": 518
+    },
+    {
+      "nom": "Entença",
+      "codi": 519
+    },
+    {
+      "nom": "Hospital Clínic",
+      "codi": 520
+    },
+    {
+      "nom": "Diagonal",
+      "codi": 521
+    },
+    {
+      "nom": "Verdaguer",
+      "codi": 522
+    },
+    {
+      "nom": "Sagrada Família",
+      "codi": 523
+    },
+    {
+      "nom": "Sant Pau | Dos de Maig",
+      "codi": 524
+    },
+    {
+      "nom": "Camp de l'Arpa",
+      "codi": 525
+    },
+    {
+      "nom": "La Sagrera",
+      "codi": 526
+    },
+    {
+      "nom": "Congrés",
+      "codi": 527
+    },
+    {
+      "nom": "Maragall",
+      "codi": 528
+    },
+    {
+      "nom": "Virrei Amat",
+      "codi": 529
+    },
+    {
+      "nom": "Vilapicina",
+      "codi": 530
+    },
+    {
+      "nom": "Horta",
+      "codi": 531
+    },
+    {
+      "nom": "El Carmel",
+      "codi": 532
+    },
+    {
+      "nom": "El Coll | La Teixonera",
+      "codi": 533
+    },
+    {
+      "nom": "Vall d'Hebron",
+      "codi": 534
+    }
+  ],
+  "L9N": [
+    {
+      "nom": "La Sagrera",
+      "codi": 9430
+    },
+    {
+      "nom": "Onze de Setembre",
+      "codi": 9432
+    },
+    {
+      "nom": "Bon Pastor",
+      "codi": 9433
+    },
+    {
+      "nom": "Can Peixauet",
+      "codi": 9440
+    },
+    {
+      "nom": "Santa Rosa",
+      "codi": 9441
+    },
+    {
+      "nom": "Fondo",
+      "codi": 9442
+    },
+    {
+      "nom": "Església Major",
+      "codi": 9443
+    },
+    {
+      "nom": "Singuerlín",
+      "codi": 9444
+    },
+    {
+      "nom": "Can Zam",
+      "codi": 9445
+    }
+  ],
+  "L9S": [
+    {
+      "nom": "Aeroport T1",
+      "codi": 9101
+    },
+    {
+      "nom": "Aeroport T2",
+      "codi": 9103
+    },
+    {
+      "nom": "Mas Blau",
+      "codi": 9104
+    },
+    {
+      "nom": "Parc Nou",
+      "codi": 9105
+    },
+    {
+      "nom": "Cèntric",
+      "codi": 9106
+    },
+    {
+      "nom": "El Prat Estació",
+      "codi": 9107
+    },
+    {
+      "nom": "Les Moreres",
+      "codi": 9109
+    },
+    {
+      "nom": "Mercabarna",
+      "codi": 9110
+    },
+    {
+      "nom": "Parc Logístic",
+      "codi": 9111
+    },
+    {
+      "nom": "Fira",
+      "codi": 9112
+    },
+    {
+      "nom": "Europa | Fira",
+      "codi": 9113
+    },
+    {
+      "nom": "Can Tries | Gornal",
+      "codi": 9114
+    },
+    {
+      "nom": "Torrassa",
+      "codi": 9115
+    },
+    {
+      "nom": "Collblanc",
+      "codi": 9116
+    },
+    {
+      "nom": "Zona Universitària",
+      "codi": 9118
+    }
+  ]
+}
