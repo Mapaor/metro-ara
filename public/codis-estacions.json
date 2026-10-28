@@ -124,73 +124,73 @@
   "L10N": [
     {
       "nom": "La Sagrera",
-      "codi": 10430
+      "codi": 930
     },
     {
       "nom": "Onze de Setembre",
-      "codi": 10432
+      "codi": 932
     },
     {
       "nom": "Bon Pastor",
-      "codi": 10433
+      "codi": 933
     },
     {
       "nom": "Llefià",
-      "codi": 10434
+      "codi": 934
     },
     {
       "nom": "La Salut",
-      "codi": 10435
+      "codi": 935
     },
     {
       "nom": "Gorg",
-      "codi": 10436
+      "codi": 936
     }
   ],
   "L10S": [
     {
       "nom": "ZAL | Riu Vell",
-      "codi": 1051
+      "codi": 951
     },
     {
       "nom": "Ecoparc",
-      "codi": 1052
+      "codi": 952
     },
     {
       "nom": "Port Comercial | La Factoria",
-      "codi": 1053
+      "codi": 953
     },
     {
       "nom": "Zona Franca",
-      "codi": 1054
+      "codi": 954
     },
     {
       "nom": "Foc",
-      "codi": 1056
+      "codi": 956
     },
     {
       "nom": "Foneria",
-      "codi": 1057
+      "codi": 957
     },
     {
       "nom": "Ciutat de la Justícia",
-      "codi": 1058
+      "codi": 958
     },
     {
       "nom": "Provençana",
-      "codi": 1059
+      "codi": 959
     },
     {
       "nom": "Can Tries | Gornal",
-      "codi": 1014
+      "codi": 914
     },
     {
       "nom": "Torrassa",
-      "codi": 1015
+      "codi": 915
     },
     {
       "nom": "Collblanc",
-      "codi": 1016
+      "codi": 916
     }
   ],
   "L11": [
@@ -598,101 +598,101 @@
   "L9N": [
     {
       "nom": "La Sagrera",
-      "codi": 9430
+      "codi": 930
     },
     {
       "nom": "Onze de Setembre",
-      "codi": 9432
+      "codi": 932
     },
     {
       "nom": "Bon Pastor",
-      "codi": 9433
+      "codi": 933
     },
     {
       "nom": "Can Peixauet",
-      "codi": 9440
+      "codi": 940
     },
     {
       "nom": "Santa Rosa",
-      "codi": 9441
+      "codi": 941
     },
     {
       "nom": "Fondo",
-      "codi": 9442
+      "codi": 942
     },
     {
       "nom": "Església Major",
-      "codi": 9443
+      "codi": 943
     },
     {
       "nom": "Singuerlín",
-      "codi": 9444
+      "codi": 944
     },
     {
       "nom": "Can Zam",
-      "codi": 9445
+      "codi": 945
     }
   ],
   "L9S": [
     {
       "nom": "Aeroport T1",
-      "codi": 9101
+      "codi": 901
     },
     {
       "nom": "Aeroport T2",
-      "codi": 9103
+      "codi": 903
     },
     {
       "nom": "Mas Blau",
-      "codi": 9104
+      "codi": 904
     },
     {
       "nom": "Parc Nou",
-      "codi": 9105
+      "codi": 905
     },
     {
       "nom": "Cèntric",
-      "codi": 9106
+      "codi": 906
     },
     {
       "nom": "El Prat Estació",
-      "codi": 9107
+      "codi": 907
     },
     {
       "nom": "Les Moreres",
-      "codi": 9109
+      "codi": 909
     },
     {
       "nom": "Mercabarna",
-      "codi": 9110
+      "codi": 910
     },
     {
       "nom": "Parc Logístic",
-      "codi": 9111
+      "codi": 911
     },
     {
       "nom": "Fira",
-      "codi": 9112
+      "codi": 912
     },
     {
       "nom": "Europa | Fira",
-      "codi": 9113
+      "codi": 913
     },
     {
       "nom": "Can Tries | Gornal",
-      "codi": 9114
+      "codi": 914
     },
     {
       "nom": "Torrassa",
-      "codi": 9115
+      "codi": 915
     },
     {
       "nom": "Collblanc",
-      "codi": 9116
+      "codi": 916
     },
     {
       "nom": "Zona Universitària",
-      "codi": 9118
+      "codi": 918
     }
   ]
 }

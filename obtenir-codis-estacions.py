@@ -23,14 +23,14 @@ METRO_LINES = {
 
 
 def stations_by_line(data):
-    """Retorna línies ordenades amb les estacions i els codis de TMB."""
+    """Agrupa per línia fent servir els codis d'estació de l'API de TMB."""
     grouped = {}
 
     for feature in data.get("features", []):
         properties = feature.get("properties", {})
         line = properties.get("NOM_LINIA")
         station_name = properties.get("NOM_ESTACIO")
-        station_code = properties.get("CODI_ESTACIO_LINIA")
+        station_code = properties.get("CODI_ESTACIO")
 
         if line not in METRO_LINES or not station_name or station_code is None:
             continue
